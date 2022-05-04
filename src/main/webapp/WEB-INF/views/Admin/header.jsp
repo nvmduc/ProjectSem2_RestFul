@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="css" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="vi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport"
@@ -10,12 +10,11 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="stylesheet"
-	href="<css:url value="Resources"/>/assets/img/basic/favicon.ico"
+	href="${pageContext.request.contextPath}/<css:url value="Resources"/>/admin/assets/img/basic/favicon.ico"
 	type="image/x-icon">
 <title>Paper</title>
 <!-- CSS -->
-<link rel="stylesheet"
-	href="<css:url value="Resources"/>/assets/css/app.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/<css:url value="Resources"/>/admin/assets/css/app.css">
 <style type="text/css">
 .error {
 	color: red;
@@ -23,60 +22,6 @@
 </style>
 </head>
 <body class="light sidebar-mini sidebar-collapse">
-	<!-- Pre loader -->
-	<div id="loader" class="loader">
-		<div class="plane-container">
-			<div class="preloader-wrapper small active">
-				<div class="spinner-layer spinner-blue">
-					<div class="circle-clipper left">
-						<div class="circle"></div>
-					</div>
-					<div class="gap-patch">
-						<div class="circle"></div>
-					</div>
-					<div class="circle-clipper right">
-						<div class="circle"></div>
-					</div>
-				</div>
-
-				<div class="spinner-layer spinner-red">
-					<div class="circle-clipper left">
-						<div class="circle"></div>
-					</div>
-					<div class="gap-patch">
-						<div class="circle"></div>
-					</div>
-					<div class="circle-clipper right">
-						<div class="circle"></div>
-					</div>
-				</div>
-
-				<div class="spinner-layer spinner-yellow">
-					<div class="circle-clipper left">
-						<div class="circle"></div>
-					</div>
-					<div class="gap-patch">
-						<div class="circle"></div>
-					</div>
-					<div class="circle-clipper right">
-						<div class="circle"></div>
-					</div>
-				</div>
-
-				<div class="spinner-layer spinner-green">
-					<div class="circle-clipper left">
-						<div class="circle"></div>
-					</div>
-					<div class="gap-patch">
-						<div class="circle"></div>
-					</div>
-					<div class="circle-clipper right">
-						<div class="circle"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 	<div id="app">
 		<aside class="main-sidebar fixed offcanvas b-r sidebar-tabs"
 			data-toggle='offcanvas'>
@@ -98,7 +43,7 @@
 								id="v-pills-settings-tab" href="#"><i class="icon-settings"></i></a>
 							<a href="">
 								<figure class="avatar">
-									<img src="<css:url value="Resources"/>/assets/img/dummy/u3.png"
+									<img src="${pageContext.request.contextPath}/<css:url value="Resources"/>/assets/img/dummy/u3.png"
 										alt="">
 									<span class="avatar-badge online"></span>
 								</figure>
@@ -122,40 +67,40 @@
 										class="icon icon-sailing-boat-water s-24"></i> <span>Dashboard</span>
 								</a></li>
 								<li class="treeview"><a href="#"><i
-										class="icon icon-people s-24"></i>Employees<i
+										class="icon icon-people s-24"></i>Account<i
 										class=" icon-angle-left  pull-right"></i></a>
 									<ul class="treeview-menu">
 										<li><a href="showemployee"><i
-												class="icon icon-circle-o"></i>All Employees</a></li>
+												class="icon icon-circle-o"></i>List Accounts</a></li>
 										<li><a href="initinsertemployee"><i
 												class="icon icon-add"></i>Add Employee</a></li>
 									</ul></li>
 								<li class="treeview"><a href="#"><i
-										class="icon icon-work s-24"></i>Department<i
+										class="icon icon-work s-24"></i>Role<i
 										class=" icon-angle-left  pull-right"></i></a>
 									<ul class="treeview-menu">
-										<li><a href="showdepartment"><i
-												class="icon icon-circle-o"></i>All Departments</a></li>
-										<li><a href="initinsertdepartment"><i
-												class="icon icon-add"></i>Add Department</a></li>
+										<li><a href="listRoles"><i
+												class="icon icon-circle-o"></i>List Roles</a></li>
+										<li><a href="insertRole"><i
+												class="icon icon-add"></i>Add Role</a></li>
 									</ul></li>
 								<li class="treeview"><a href="#"><i
-										class="icon icon-assignment s-24"></i>Degree<i
+										class="icon icon-assignment s-24"></i>Information Car<i
 										class=" icon-angle-left  pull-right"></i></a>
 									<ul class="treeview-menu">
 										<li><a href="showdegree"><i
-												class="icon icon-circle-o"></i>All Degrees</a></li>
+												class="icon icon-circle-o"></i>List Information Car</a></li>
 										<li><a href="initinsertdegree"><i
 												class="icon icon-add"></i>Add Degree</a></li>
 									</ul></li>
 								<li class="treeview"><a href="#"><i
-										class="icon icon-star s-24"></i>Rank<i
+										class="icon icon-star s-24"></i>Insurance Packages<i
 										class=" icon-angle-left  pull-right"></i></a>
 									<ul class="treeview-menu">
-										<li><a href="showrank"><i class="icon icon-circle-o"></i>All
-												Ranks</a></li>
-										<li><a href="initinsertrank"><i class="icon icon-add"></i>Add
-												Rank</a></li>
+										<li><a href="listPackages"><i class="icon icon-circle-o"></i>All
+												Packages</a></li>
+										<li><a href="initInsertPackage"><i class="icon icon-add"></i>Add
+												Package</a></li>
 									</ul></li>
 								<li class="treeview"><a href="#"><i
 										class="icon icon-group s-24"></i>Role<i

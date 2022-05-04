@@ -155,9 +155,9 @@
          immediately after the control sidebar -->
 		<div class="control-sidebar-bg shadow white fixed"></div>
 	</div>
+	
 	<!--/#app -->
-	<script type="text/javascript"
-		src="<css:url value="Resources"/>/assets/js/app.js"></script>
-
+	<script type="text/javascript" src="${pageContext.request.contextPath }/<css:url value="Resources"/>/admin/assets/js/app.js"></script>
 </body>
+
 </html>

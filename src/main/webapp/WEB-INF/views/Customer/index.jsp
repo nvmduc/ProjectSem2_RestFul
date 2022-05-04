@@ -137,7 +137,7 @@
                                         <i class="fa fa-phone"></i> +123 456 7890 <span>Toll Free</span>
                                     </p>
                                     <p>
-                                        <a class="btn-default" href="#">Get Free Quote</a>
+                                        <a class="btn-default" href="#">Buy Now</a>
                                     </p>
                                 </div>
                                 <img src="<css:url value="Resources"/>/images/1.jpg" alt="" class="img-responsive" />
@@ -154,7 +154,7 @@
                                         <i class="fa fa-phone"></i> +123 456 7890 <span>Toll Free</span>
                                     </p>
                                     <p>
-                                        <a class="btn-default" href="#">Get Free Quote</a>
+                                        <a class="btn-default" href="#">Buy Now</a>
                                     </p>
                                 </div>
                                 <img src="<css:url value="Resources"/>/images/3.jpg" alt="" class="img-responsive" />
@@ -171,7 +171,7 @@
                                         <i class="fa fa-phone"></i> +123 456 7890 <span>Toll Free</span>
                                     </p>
                                     <p>
-                                        <a class="btn-default" href="#">Get Free Quote</a>
+                                        <a class="btn-default" href="#">Buy Now</a>
                                     </p>
                                 </div>
                                 <img src="<css:url value="Resources"/>/images/2.jpg" alt="" class="img-responsive" />

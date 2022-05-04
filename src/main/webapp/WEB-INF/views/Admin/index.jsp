@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="css" uri="http://java.sun.com/jsp/jstl/core"%>
-<jsp:include page="header.jsp" flush="true"/>
+<jsp:include page="header.jsp"/>
 		<div class="has-sidebar-left has-sidebar-tabs">
 			<!--navbar-->
 			<div class="sticky">
@@ -31,9 +31,8 @@
 							
 							<!-- User Account-->
 							<li class="dropdown custom-dropdown user user-menu "><a
-								href="#" class="nav-link" data-toggle="dropdown"> <img
-									src="assets/img/dummy/u8.png" class="user-image"
-									alt="User Image"> <i class="icon-more_vert "></i>
+								href="#" class="nav-link" data-toggle="dropdown"> <img src="${pageContext.request.contextPath}/<css:url value="Resources"/>/assets/img/dummy/u8.png"
+										alt=""> <i class="icon-more_vert "></i>
 							</a>
 								<div class="dropdown-menu p-4 dropdown-menu-right">
 									<div class="row box justify-content-between my-4">
@@ -446,4 +445,4 @@
 			</div>
 		</div>
 		<!-- Right Sidebar -->
-		<jsp:include page="footer.jsp" flush="true"/>x	
+		<jsp:include page="footer.jsp"/>

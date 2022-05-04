@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Insurance - Press</title>
+    <title>Car Insurance</title>
     <link rel="shortcut icon" href="<css:url value="Resources"/>/images/favicon.png" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -57,7 +57,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="home">
                         <span>Car</span>Insurance
                     </a>
                     <p>Call Us Now <b>+215 (362) 4579</b></p>
@@ -77,7 +77,7 @@
                             <a href="contact-us.html">Contact</a>
                         </li>
                         <li>
-                            <a href="login" class="btn-default">Login/Register</a>
+                            <a href="register" class="btn-default">Login/Register</a>
                         </li>
                     </ul>
                 </div>
