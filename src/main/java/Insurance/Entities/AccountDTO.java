@@ -16,22 +16,23 @@ public class AccountDTO {
 	private String street;
 	private String apartmentNumber;
 	private String zipcode;
+	private Integer role;
 	private Integer statusAccount;
 	private Date created_at_Account;
 	public AccountDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public AccountDTO(Integer idAccount, String name, String email, String password,String phone, String avatar, Date birthDay,
-			String city, String district, String wards, String street, String apartmentNumber, String zipcode,
-			Integer statusAccount, Date created_at_Account) {
+	public AccountDTO(Integer idAccount, String name, String email, String password, String avatar, String phone,
+			Date birthDay, String city, String district, String wards, String street, String apartmentNumber,
+			String zipcode, Integer role, Integer statusAccount, Date created_at_Account) {
 		super();
 		this.idAccount = idAccount;
 		this.name = name;
 		this.email = email;
 		this.password = password;
-		this.phone = phone;
 		this.avatar = avatar;
+		this.phone = phone;
 		this.birthDay = birthDay;
 		this.city = city;
 		this.district = district;
@@ -39,14 +40,9 @@ public class AccountDTO {
 		this.street = street;
 		this.apartmentNumber = apartmentNumber;
 		this.zipcode = zipcode;
+		this.role = role;
 		this.statusAccount = statusAccount;
 		this.created_at_Account = created_at_Account;
-	}
-	public String getPhone() {
-		return phone;
-	}
-	public void setPhone(String phone) {
-		this.phone = phone;
 	}
 	public Integer getIdAccount() {
 		return idAccount;
@@ -77,6 +73,12 @@ public class AccountDTO {
 	}
 	public void setAvatar(String avatar) {
 		this.avatar = avatar;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 	public Date getBirthDay() {
 		return birthDay;
@@ -119,6 +121,12 @@ public class AccountDTO {
 	}
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
+	}
+	public Integer getRole() {
+		return role;
+	}
+	public void setRole(Integer role) {
+		this.role = role;
 	}
 	public Integer getStatusAccount() {
 		return statusAccount;

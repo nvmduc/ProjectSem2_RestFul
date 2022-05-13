@@ -2037,11 +2037,12 @@ strong {
 
 .center1 {
 	margin: auto;
-	width: 50%;
 }
-.img-product{
+
+.img-product {
 	border-radius: 7px 7px 0px 0px;
 }
+
 .column {
 	float: left;
 	width: 263px;

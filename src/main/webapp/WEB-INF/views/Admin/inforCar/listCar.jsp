@@ -10,7 +10,7 @@
 			<div class="relative">
 				<div class="d-flex">
 					<div class="d-none d-md-block">
-						<h1 class="nav-title">Package Insurance</h1>
+						<h1 class="nav-title">List Information Car</h1>
 					</div>
 				</div>
 			</div>
@@ -113,30 +113,33 @@
 									<thead style="border-bottom: 1px solid #DFDFDF">
 										<tr>
 											<td>ID</td>
-											<td>Package Name</td>
-											<td>Image Package</td>
+											<td>Car</td>
+											<td>Số Khung</td>
+											<td>Số Máy</td>
+											<td>Biển số xe</td>
+											<td>Tên Chủ Xe</td>
 											<td>Status</td>
 											<td>Created At</td>
 											<td>Action</td>
 										</tr>
 									</thead>
 									<tbody>
-										<css:forEach items="${listPackages }" var="p">
+										<css:forEach items="${listCars }" var="c">
 											<tr class="no-b">
-												<td>${p.idPackage }</td>
+												<td>${c.idInformationCar }</td>
 												<td>
-													<h6>${p.namePackage }</h6>
+													<h6>${c.carCompany } ${c.carLine } ${c.carType } | Năm:${c.yearOfManufacture },Xe ${c.seats } chỗ</h6>
 												</td>
-												<td style="width: 20%">
-												<img alt="" src="${pageContext.request.contextPath}/<css:url
-														value="Resources" />/image_Package/${p.imagePackage }">
-												</td>
+												<td>${c.frameNumber }</td>
+												<td>${c.engineNumber }</td>
+												<td>${c.seaOfControl }</td>
+												<td>${c.idAccount }</td>
 												<td>
 													<div class="d-none d-lg-block">
-														<span class="badge badge-success">${p.statusPackage == 1 ? "Show":"Hide" }</span>
+														<span class="badge badge-success">${c.statusInformationCar == 1 ? "Hide":"Show" }</span>
 													</div>
 												</td>
-												<td><span class="badge badge-success">${p.created_at_Package}</span></td>
+												<td><span class="badge badge-success">${c.created_at_InformationCar}</span></td>
 												<td><a href="initUpdatePackage?idPackage=${p.idPackage }"
 													class="btn-fab btn-fab-sm btn-primary shadow text-white"><i
 														class="icon-pencil"></i></a> <a

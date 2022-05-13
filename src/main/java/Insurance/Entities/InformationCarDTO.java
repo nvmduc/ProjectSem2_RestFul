@@ -11,6 +11,7 @@ public class InformationCarDTO {
 	private String frameNumber;
 	private String engineNumber;
 	private String seaOfControl;
+	private String seats;
 	private Integer idAccount;
 	private Integer statusInformationCar;
 	private Date created_at_InformationCar;
@@ -19,8 +20,8 @@ public class InformationCarDTO {
 		// TODO Auto-generated constructor stub
 	}
 	public InformationCarDTO(Integer idInformationCar, String carCompany, String carLine, String carType,
-			Integer yearOfManufacture, String frameNumber, String engineNumber, String seaOfControl, Integer idAccount,
-			Integer statusInformationCar, Date created_at_InformationCar) {
+			Integer yearOfManufacture, String frameNumber, String engineNumber, String seaOfControl, String seats,
+			Integer idAccount, Integer statusInformationCar, Date created_at_InformationCar) {
 		super();
 		this.idInformationCar = idInformationCar;
 		this.carCompany = carCompany;
@@ -30,6 +31,7 @@ public class InformationCarDTO {
 		this.frameNumber = frameNumber;
 		this.engineNumber = engineNumber;
 		this.seaOfControl = seaOfControl;
+		this.seats = seats;
 		this.idAccount = idAccount;
 		this.statusInformationCar = statusInformationCar;
 		this.created_at_InformationCar = created_at_InformationCar;
@@ -81,6 +83,12 @@ public class InformationCarDTO {
 	}
 	public void setSeaOfControl(String seaOfControl) {
 		this.seaOfControl = seaOfControl;
+	}
+	public String getSeats() {
+		return seats;
+	}
+	public void setSeats(String seats) {
+		this.seats = seats;
 	}
 	public Integer getIdAccount() {
 		return idAccount;

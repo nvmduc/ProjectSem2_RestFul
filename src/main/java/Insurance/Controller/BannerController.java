@@ -9,7 +9,6 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -27,57 +26,57 @@ import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.GenericType;
 import com.sun.jersey.api.client.WebResource;
-import com.sun.org.apache.regexp.internal.recompile;
 
+import Insurance.Entities.BannerDTO;
 import Insurance.Entities.InsurancePackageDTO;
 
 @Controller
 @RequestMapping("/admin")
-public class PackageController {
+public class BannerController {
 	@InitBinder
 	public void initBinder(WebDataBinder date) {
 		SimpleDateFormat sf = new SimpleDateFormat("yyyy-mm-dd");
 		date.registerCustomEditor(Date.class, new CustomDateEditor(sf, true));
 	}
 	
-	@RequestMapping("/listPackages")
+	@RequestMapping("/listBanners")
 	public String listPackages(Model model) {
 		Client client = Client.create();
 		Gson son = new Gson();
 		WebResource webResource = client
-				.resource("http://localhost:8080/ProjectSem2_Insurance/rest/package-service/getAllPackage");
+				.resource("http://localhost:8080/ProjectSem2_Insurance/rest/banner-service/getAllBanner");
 		String data = webResource.get(String.class);
-		GenericType<List<InsurancePackageDTO>> listType = new GenericType<List<InsurancePackageDTO>>() {
+		GenericType<List<BannerDTO>> listType = new GenericType<List<BannerDTO>>() {
 		};
-		List<InsurancePackageDTO> listPackages = son.fromJson(data, listType.getType());
-		model.addAttribute("listPackages", listPackages);
-		return "admin/package/listPackage";
+		List<BannerDTO> listBanners = son.fromJson(data, listType.getType());
+		model.addAttribute("listBanners", listBanners);
+		return "admin/banner/listBanner";
 	}
 	
-	@RequestMapping("/initInsertPackage")
-	public String initInsertPackage(@ModelAttribute("package") InsurancePackageDTO insurancePackage, Model model) {
+	@RequestMapping("/initInsertBanner")
+	public String initInsertBanner(@ModelAttribute("banner") BannerDTO banner, Model model) {
 
-		return "admin/package/insertPackage";
+		return "admin/banner/insertBanner";
 	}
 	
-	@RequestMapping("/initUpdatePackage")
-	public String initUpdatePackage(@RequestParam("idPackage")Integer idPackage, Model model) {
+	@RequestMapping("/initUpdateBanner")
+	public String initUpdateBanner(@RequestParam("idBanner")Integer idBanner, Model model) {
 		Client client = Client.create();
 		Gson son = new Gson();
 		WebResource webResource = client
-				.resource("http://localhost:8080/ProjectSem2_Insurance/rest/package-service/getPackageById/" + idPackage);
+				.resource("http://localhost:8080/ProjectSem2_Insurance/rest/banner-service/getBannerById/" + idBanner);
 		String data = webResource.get(String.class);
-		InsurancePackageDTO pack = son.fromJson(data, InsurancePackageDTO.class);
-		model.addAttribute("pack", pack);
-		return "admin/package/updatePackage";
+		BannerDTO banner = son.fromJson(data, BannerDTO.class);
+		model.addAttribute("banner", banner);
+		return "admin/banner/updateBanner";
 	}
-	
-	@RequestMapping("/updatePackage")
-	public String updatePackage(@ModelAttribute("pack") InsurancePackageDTO insurancePackage,BindingResult bindingResult,
-			@RequestParam("image") MultipartFile multi, HttpServletRequest request, Model model) {
+	@RequestMapping("/updateBanner")
+	public String updatePackage(@ModelAttribute("banner") InsurancePackageDTO insurancePackage,BindingResult bindingResult,
+			@RequestParam("imgB") MultipartFile multi, HttpServletRequest request, Model model) {
 		Gson son = new Gson();
-		String path = request.getServletContext().getRealPath("Resources/image_Package");
+		String path = request.getServletContext().getRealPath("Resources/image_Banner");
 		File f = new File(path);
+
 		File dest = new File(f.getAbsoluteFile() + "/" + multi.getOriginalFilename());
 		if (!dest.exists()) {
 			try {
@@ -87,35 +86,27 @@ public class PackageController {
 				er.printStackTrace();
 			}
 		}
-		String nameimg = multi.getOriginalFilename();
-		if(nameimg.length()==0) {
-        	insurancePackage.setImagePackage(insurancePackage.getImagePackage());
-        }else {
-        	insurancePackage.setImagePackage(nameimg);
-        }
 		insurancePackage.setImagePackage(multi.getOriginalFilename());
 		String data = son.toJson(insurancePackage);
 		Client client = Client.create();
 		WebResource webResource = client
-				.resource("http://localhost:8080/ProjectSem2_Insurance/rest/package-service/updatePackage");
+				.resource("http://localhost:8080/ProjectSem2_Insurance/rest/banner-service/updateBanner");
 		ClientResponse clientResponse = webResource.type("application/json").post(ClientResponse.class, data);
 		String result = clientResponse.getEntity(String.class);
 		Boolean bl = son.fromJson(result, Boolean.class);
 		if (bl) {
 			model.addAttribute("messenger", "Update True!");
-			return "redirect:listPackages";
+			return "redirect:/listBanners";
 		} else {
 			model.addAttribute("messenger", "Update False!");
-			return "admin/package/updatePackage";
+			return "admin/banner/updateBanner";
 		}
 	}
-	@RequestMapping("/insertPackage")
-	public String insertPackage(@ModelAttribute("package")InsurancePackageDTO packageDTO, BindingResult bindingResult,
-			@RequestParam("image") MultipartFile multi, HttpServletRequest request,Model model) {
-
-        
+	@RequestMapping("/insertBanner")
+	public String insertBanner(@ModelAttribute("banner")BannerDTO bannerDTO, BindingResult bindingResult,
+			@RequestParam("imgB") MultipartFile multi, HttpServletRequest request,Model model) {
 		Gson son = new Gson();
-		String path = request.getServletContext().getRealPath("Resources/image_Package");
+		String path = request.getServletContext().getRealPath("Resources/image_Banner");
 		File f = new File(path);
 
 		File dest = new File(f.getAbsoluteFile() + "/" + multi.getOriginalFilename());
@@ -127,28 +118,28 @@ public class PackageController {
 				er.printStackTrace();
 			}
 		}
-		packageDTO.setImagePackage(multi.getOriginalFilename());
-		String data = son.toJson(packageDTO);
+		bannerDTO.setImgBanner(multi.getOriginalFilename());
+		String data = son.toJson(bannerDTO);
 		Client client = Client.create();
 		WebResource webResource = client
-				.resource("http://localhost:8080/ProjectSem2_Insurance/rest/package-service/insertPackage");
+				.resource("http://localhost:8080/ProjectSem2_Insurance/rest/banner-service/insertBanner");
 		ClientResponse clientResponse = webResource.type("application/json").post(ClientResponse.class, data);
 		String result = clientResponse.getEntity(String.class);
 		Boolean bl = son.fromJson(result, Boolean.class);
 		if (bl) {
-			return "redirect:listPackages";
+			return "redirect:listBanners";
 		} else {
 			model.addAttribute("error", "Insert False!");
-			return "admin/package/insertPackage";
+			return "admin/banner/insertBanner";
 		}
 	}
 	
-	@RequestMapping("/deletePackage")
-	public String deletePackage(@RequestParam("idPackage")Integer idPackage,Model model) {
+	@RequestMapping("/deleteBanner")
+	public String deleteBanner(@RequestParam("idBanner")Integer idBanner,Model model) {
 		Gson son = new Gson();
 		Client client = Client.create();
 		WebResource webResource = client
-				.resource("http://localhost:8080/ProjectSem2_Insurance/rest/package-service/deletePackage/" + idPackage);
+				.resource("http://localhost:8080/ProjectSem2_Insurance/rest/banner-service/deleteBanenr/" + idBanner);
 		String data = webResource.type("application/json").post(String.class);
 		Boolean bl = son.fromJson(data, Boolean.class);
 		if (bl) {
@@ -156,6 +147,6 @@ public class PackageController {
 		} else {
 			model.addAttribute("messenger", "Delete False!");
 		}
-		return "redirect:listPackages";
+		return "redirect:listBanners";
 	}
 }

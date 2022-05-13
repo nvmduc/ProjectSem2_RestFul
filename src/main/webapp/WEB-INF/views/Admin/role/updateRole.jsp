@@ -97,6 +97,7 @@
 			</div>
 		</div>
 	</div>
+	<h3 style="color:red">${messenger }</h3>
 	<!--#navbar-->
 	<div class="container-fluid animatedParent animateOnce my-3">
 		<div class="animated fadeInUpShort">
@@ -104,11 +105,12 @@
 				<div class="row">
 					<div class="col-md-9">
 						<div class="row">
-							<form:input path="idRole" type="hidden"/>
+								<form:input path="idRole" type="hidden" readonly="readonly" class="form-control"
+									id="validationCustom01" placeholder="Role ID"/>
 							<div class="col-md-6 mb-3">
 								<label for="validationCustom01">Role Name</label>
 								<form:input path="nameRole" type="text" class="form-control"
-									id="validationCustom01" placeholder="Role Name" value="${role.nameRole }"/>
+									id="validationCustom01" placeholder="Role Name"/>
 							</div>
 							<div class="col-md-12 mb-1" style="display: block">
 								<label for="validationCustom02">Role Status</label>

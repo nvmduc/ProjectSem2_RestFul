@@ -10,7 +10,7 @@
 			<div class="relative">
 				<div class="d-flex">
 					<div class="d-none d-md-block">
-						<h1 class="nav-title">Package Insurance</h1>
+						<h1 class="nav-title">Account</h1>
 					</div>
 				</div>
 			</div>
@@ -113,34 +113,39 @@
 									<thead style="border-bottom: 1px solid #DFDFDF">
 										<tr>
 											<td>ID</td>
-											<td>Package Name</td>
-											<td>Image Package</td>
+											<td>Name</td>
+											<td>Email</td>
+											<td>Address</td>
+											<td>Phone</td>
+											<td>Role</td>
 											<td>Status</td>
 											<td>Created At</td>
 											<td>Action</td>
 										</tr>
 									</thead>
 									<tbody>
-										<css:forEach items="${listPackages }" var="p">
+										<css:forEach items="${listAccounts }" var="a">
 											<tr class="no-b">
-												<td>${p.idPackage }</td>
+												<td>${a.idAccount }</td>
 												<td>
-													<h6>${p.namePackage }</h6>
+													<h6>${a.name }</h6>
 												</td>
-												<td style="width: 20%">
-												<img alt="" src="${pageContext.request.contextPath}/<css:url
-														value="Resources" />/image_Package/${p.imagePackage }">
-												</td>
+												<td>${a.email }</td>
+<!-- 												<td style="width: 20%"><img alt="" -->
+<%-- 													src="${pageContext.request.contextPath}/<css:url --%>
+<%-- 														value="Resources" />/images_Account/${a.avatar }"> --%>
+<!-- 												</td> -->
+												<td>${a.apartmentNumber }, ${a.street }, ${a.wards }, ${a.district }, ${a.city }, ${a.zipcode }</td>
+												<td>${a.phone }</td>
+												<td>${a.role == 1 ? "Customer":"Admin" }</td>
 												<td>
 													<div class="d-none d-lg-block">
-														<span class="badge badge-success">${p.statusPackage == 1 ? "Show":"Hide" }</span>
+														<span class="badge badge-success">${a.statusAccount == 1 ? "Show":"Hide" }</span>
 													</div>
 												</td>
-												<td><span class="badge badge-success">${p.created_at_Package}</span></td>
-												<td><a href="initUpdatePackage?idPackage=${p.idPackage }"
-													class="btn-fab btn-fab-sm btn-primary shadow text-white"><i
-														class="icon-pencil"></i></a> <a
-													href="deletePackage?idPackage=${p.idPackage }"
+												<td><span class="badge badge-success">${a.created_at_Account}</span></td>
+												<td><a
+													href="deletePackage?idPackage=${a.idAccount }"
 													class="btn-fab btn-fab-sm btn-danger shadow text-white"
 													onclick="alertdelete()"><i class="icon-trash"></i></a></td>
 												<td><div class="d-none d-lg-block"></div></td>

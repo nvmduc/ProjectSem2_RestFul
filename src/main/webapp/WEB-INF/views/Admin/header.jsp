@@ -70,25 +70,25 @@
 										class="icon icon-people s-24"></i>Account<i
 										class=" icon-angle-left  pull-right"></i></a>
 									<ul class="treeview-menu">
-										<li><a href="showemployee"><i
+										<li><a href="listAccount"><i
 												class="icon icon-circle-o"></i>List Accounts</a></li>
 										<li><a href="initinsertemployee"><i
 												class="icon icon-add"></i>Add Employee</a></li>
 									</ul></li>
 								<li class="treeview"><a href="#"><i
-										class="icon icon-work s-24"></i>Role<i
+										class="icon icon-work s-24"></i>Banner<i
 										class=" icon-angle-left  pull-right"></i></a>
 									<ul class="treeview-menu">
-										<li><a href="listRoles"><i
-												class="icon icon-circle-o"></i>List Roles</a></li>
+										<li><a href="listBanners"><i
+												class="icon icon-circle-o"></i>List Banners</a></li>
 										<li><a href="insertRole"><i
-												class="icon icon-add"></i>Add Role</a></li>
+												class="icon icon-add"></i>Add Banner</a></li>
 									</ul></li>
 								<li class="treeview"><a href="#"><i
 										class="icon icon-assignment s-24"></i>Information Car<i
 										class=" icon-angle-left  pull-right"></i></a>
 									<ul class="treeview-menu">
-										<li><a href="showdegree"><i
+										<li><a href="listCars"><i
 												class="icon icon-circle-o"></i>List Information Car</a></li>
 										<li><a href="initinsertdegree"><i
 												class="icon icon-add"></i>Add Degree</a></li>

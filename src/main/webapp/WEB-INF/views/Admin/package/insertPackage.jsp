@@ -112,7 +112,7 @@
 							</div>
 							<div class="col-md-12 mb-1">
 								<label for="file-upload" class="custom-file-upload">Image Package</label> 
-								<input type="file" name="image" id=""/>
+								<input type="file" name="image"/>
 							</div>
 							<div class="col-md-12 mb-1" style="display: block">
 								<label for="validationCustom02">Package Status</label>

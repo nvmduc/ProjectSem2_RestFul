@@ -10,7 +10,7 @@
 			<div class="relative">
 				<div class="d-flex">
 					<div class="d-none d-md-block">
-						<h1 class="nav-title">Package Insurance</h1>
+						<h1 class="nav-title">List Banner</h1>
 					</div>
 				</div>
 			</div>
@@ -113,34 +113,39 @@
 									<thead style="border-bottom: 1px solid #DFDFDF">
 										<tr>
 											<td>ID</td>
-											<td>Package Name</td>
-											<td>Image Package</td>
+											<td>Title Banner</td>
+											<td>Name Banner</td>
+											<td>Image Banner</td>
+											<td>Description</td>
 											<td>Status</td>
 											<td>Created At</td>
 											<td>Action</td>
 										</tr>
 									</thead>
 									<tbody>
-										<css:forEach items="${listPackages }" var="p">
+										<css:forEach items="${listBanners }" var="b">
 											<tr class="no-b">
-												<td>${p.idPackage }</td>
+												<td>${b.idBanner }</td>
 												<td>
-													<h6>${p.namePackage }</h6>
+													<h6>${b.titleBanner }</h6>
 												</td>
-												<td style="width: 20%">
-												<img alt="" src="${pageContext.request.contextPath}/<css:url
-														value="Resources" />/image_Package/${p.imagePackage }">
+												<td>${b.nameBanner }</td>
+												<td style="width: 20%"><img alt=""
+													src="${pageContext.request.contextPath}/<css:url
+ 														value="Resources" />/images_Account/${b.imgBanner }">
 												</td>
+												<td>${b.description }</td>
 												<td>
 													<div class="d-none d-lg-block">
-														<span class="badge badge-success">${p.statusPackage == 1 ? "Show":"Hide" }</span>
+														<span class="badge badge-success">${b.status == 1 ? "Show":"Hide" }</span>
 													</div>
 												</td>
-												<td><span class="badge badge-success">${p.created_at_Package}</span></td>
-												<td><a href="initUpdatePackage?idPackage=${p.idPackage }"
+												<td><span class="badge badge-success">${b.created_at}</span></td>
+												<td>
+												<a href="initUpdateBanner?idBanner=${b.idBanner }"
 													class="btn-fab btn-fab-sm btn-primary shadow text-white"><i
-														class="icon-pencil"></i></a> <a
-													href="deletePackage?idPackage=${p.idPackage }"
+														class="icon-pencil"></i></a>
+												<a href="deleteBanner?idBanner=${b.idBanner }"
 													class="btn-fab btn-fab-sm btn-danger shadow text-white"
 													onclick="alertdelete()"><i class="icon-trash"></i></a></td>
 												<td><div class="d-none d-lg-block"></div></td>
@@ -166,7 +171,7 @@
 		</div>
 	</div>
 	<!--Add New Message Fab Button-->
-	<a href="initInsertPackage"
+	<a href="initInsertBanner"
 		class="btn-fab btn-fab-md fab-right fab-right-bottom-fixed shadow btn-primary"><i
 		class="icon-add"></i></a>
 </div>

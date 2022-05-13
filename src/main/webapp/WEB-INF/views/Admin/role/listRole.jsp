@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="css" uri="http://java.sun.com/jsp/jstl/core"%>
-<jsp:include page="../header.jsp" flush="true" />
+<jsp:include page="../header.jsp"/>
 <div class="has-sidebar-left has-sidebar-tabs">
 	<!--navbar-->
 	<div class="sticky">
@@ -127,7 +127,7 @@
 													<h6>${role.nameRole }</h6>
 												</td>
 												<td><div class="d-none d-lg-block">
-														<span class="badge badge-success">${role.statusRole == 1 ? "Hide":"Show" }</span>
+														<span class="badge badge-success">${role.statusRole == 1 ? "Show":"Hide" }</span>
 													</div></td>
 												<td><div class="d-none d-lg-block">
 														<span class="badge badge-success">${role.created_at_Role}</span>
@@ -149,8 +149,7 @@
 			</div>
 			<nav class="pt-3" aria-label="Page navigation">
 				<ul class="pagination">
-					<li class="page-item"><a class="page-link" href="#">Previous</a>
-					</li>
+					<li class="page-item"><a class="page-link" href="#">Previous</a></li>
 					<li class="page-item"><a class="page-link" href="#">1</a></li>
 					<li class="page-item"><a class="page-link" href="#">2</a></li>
 					<li class="page-item"><a class="page-link" href="#">3</a></li>
@@ -165,4 +164,4 @@
 		class="icon-add"></i></a>
 </div>
 <!-- Right Sidebar -->
-<jsp:include page="../footer.jsp" />
+<jsp:include page="../footer.jsp"/>
