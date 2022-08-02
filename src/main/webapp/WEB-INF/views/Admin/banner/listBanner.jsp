@@ -132,7 +132,7 @@
 												<td>${b.nameBanner }</td>
 												<td style="width: 20%"><img alt=""
 													src="${pageContext.request.contextPath}/<css:url
- 														value="Resources" />/images_Account/${b.imgBanner }">
+ 														value="Resources" />/image_Banner/${b.imgBanner }">
 												</td>
 												<td>${b.description }</td>
 												<td>

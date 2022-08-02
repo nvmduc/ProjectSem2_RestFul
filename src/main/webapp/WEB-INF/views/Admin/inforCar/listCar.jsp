@@ -117,7 +117,7 @@
 											<td>Số Khung</td>
 											<td>Số Máy</td>
 											<td>Biển số xe</td>
-											<td>Tên Chủ Xe</td>
+											<td>Số điện thoại</td>
 											<td>Status</td>
 											<td>Created At</td>
 											<td>Action</td>
@@ -128,19 +128,25 @@
 											<tr class="no-b">
 												<td>${c.idInformationCar }</td>
 												<td>
-													<h6>${c.carCompany } ${c.carLine } ${c.carType } | Năm:${c.yearOfManufacture },Xe ${c.seats } chỗ</h6>
+													<h6>${c.carCompany } ${c.carLine } ${c.carType } | Năm:
+														${c.yearOfManufacture },Xe ${c.seats } chỗ</h6>
 												</td>
 												<td>${c.frameNumber }</td>
 												<td>${c.engineNumber }</td>
 												<td>${c.seaOfControl }</td>
-												<td>${c.idAccount }</td>
+												<td><css:forEach items="${listAccounts }" var="acc">
+													<css:if test="${c.idAccount == acc.idAccount }">
+														${acc.phone }
+													</css:if>
+													</css:forEach></td>
 												<td>
 													<div class="d-none d-lg-block">
-														<span class="badge badge-success">${c.statusInformationCar == 1 ? "Hide":"Show" }</span>
+														<span class="badge badge-success">${c.statusInformationCar == 1 ? "Show":"Hide" }</span>
 													</div>
 												</td>
 												<td><span class="badge badge-success">${c.created_at_InformationCar}</span></td>
-												<td><a href="initUpdatePackage?idPackage=${p.idPackage }"
+												<td><a
+													href="initUpdatePackage?idPackage=${p.idPackage }"
 													class="btn-fab btn-fab-sm btn-primary shadow text-white"><i
 														class="icon-pencil"></i></a> <a
 													href="deletePackage?idPackage=${p.idPackage }"

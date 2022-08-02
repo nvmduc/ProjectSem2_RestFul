@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -29,6 +30,7 @@ import com.sun.jersey.api.client.GenericType;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.org.apache.regexp.internal.recompile;
 
+import Insurance.Entities.DetailPackageDTO;
 import Insurance.Entities.InsurancePackageDTO;
 
 @Controller
@@ -50,14 +52,15 @@ public class PackageController {
 		GenericType<List<InsurancePackageDTO>> listType = new GenericType<List<InsurancePackageDTO>>() {
 		};
 		List<InsurancePackageDTO> listPackages = son.fromJson(data, listType.getType());
+		
+		WebResource webResource2 = client.resource("http://localhost:8080/ProjectSem2_Insurance/rest/detailpack-service/getAllDetailPackage");
+		String data2 = webResource2.get(String.class);
+		GenericType<List<DetailPackageDTO>> listType2 = new GenericType<List<DetailPackageDTO>>() {
+		};
+		List<DetailPackageDTO> dPack = son.fromJson(data2, listType2.getType());
+		model.addAttribute("dPack", dPack);
 		model.addAttribute("listPackages", listPackages);
 		return "admin/package/listPackage";
-	}
-	
-	@RequestMapping("/initInsertPackage")
-	public String initInsertPackage(@ModelAttribute("package") InsurancePackageDTO insurancePackage, Model model) {
-
-		return "admin/package/insertPackage";
 	}
 	
 	@RequestMapping("/initUpdatePackage")
@@ -109,6 +112,13 @@ public class PackageController {
 			return "admin/package/updatePackage";
 		}
 	}
+	
+	@RequestMapping("/initInsertPackage")
+	public String initInsertPackage(@ModelAttribute("package") InsurancePackageDTO insurancePackage, Model model) {
+
+		return "admin/package/insertPackage";
+	}
+	
 	@RequestMapping("/insertPackage")
 	public String insertPackage(@ModelAttribute("package")InsurancePackageDTO packageDTO, BindingResult bindingResult,
 			@RequestParam("image") MultipartFile multi, HttpServletRequest request,Model model) {

@@ -39,11 +39,17 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+<style type="text/css">
+.user {
+	width: 150px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+</style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar-fixed-top">
-<css:if test="${!empty user}">
-</css:if>
 	<header>
 		<div class="top-bar">
 			<div class="container">
@@ -87,7 +93,9 @@
 						<li><a href="contact-us.html">Contact</a></li>
 						<css:if test="${!empty user}">
 							<li><a href="logout" class="btn-default">Logout</a></li>
-							<li><a href="#" class="btn btn-danger">${user.name }</a></li>
+							<li><a class="user"
+								href="showCars?idAccount=${user.idAccount }"
+								class="btn btn-danger">${user.name }</a></li>
 						</css:if>
 						<css:if test="${empty user}">
 							<li><a href="login" class="btn-default">Login</a></li>

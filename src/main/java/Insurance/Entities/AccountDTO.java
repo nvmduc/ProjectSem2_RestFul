@@ -7,8 +7,8 @@ public class AccountDTO {
 	private String name;
 	private String email;
 	private String password;
-	private String avatar;
 	private String phone;
+	private String avatar;
 	private Date birthDay;
 	private String city;
 	private String district;
@@ -23,7 +23,7 @@ public class AccountDTO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public AccountDTO(Integer idAccount, String name, String email, String password, String avatar, String phone,
+	public AccountDTO(Integer idAccount, String name, String email, String password, String phone, String avatar,
 			Date birthDay, String city, String district, String wards, String street, String apartmentNumber,
 			String zipcode, Integer role, Integer statusAccount, Date created_at_Account) {
 		super();
@@ -31,8 +31,8 @@ public class AccountDTO {
 		this.name = name;
 		this.email = email;
 		this.password = password;
-		this.avatar = avatar;
 		this.phone = phone;
+		this.avatar = avatar;
 		this.birthDay = birthDay;
 		this.city = city;
 		this.district = district;
@@ -68,17 +68,17 @@ public class AccountDTO {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getAvatar() {
-		return avatar;
-	}
-	public void setAvatar(String avatar) {
-		this.avatar = avatar;
-	}
 	public String getPhone() {
 		return phone;
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+	public String getAvatar() {
+		return avatar;
+	}
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
 	}
 	public Date getBirthDay() {
 		return birthDay;

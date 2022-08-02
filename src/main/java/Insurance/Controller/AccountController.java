@@ -72,7 +72,7 @@ public class AccountController {
 		HttpSession session = request.getSession();
 		if(checklog) {
 			session.setAttribute("role", accountSession.getRole());
-			session.setAttribute("user",accountSession);
+			session.setAttribute("user", accountSession);
 			return "redirect:home";
 		}else {
 			return "redirect:login";
@@ -95,9 +95,11 @@ public class AccountController {
 	public String register(@Valid Model model, @ModelAttribute("acc") AccountDTO accDTO,
 			@RequestParam("imgavt") MultipartFile multi, HttpServletRequest request, BindingResult bindingResult) {
 		Gson son = new Gson();
+		
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		String hashedPassword = passwordEncoder.encode(accDTO.getPassword());
 		accDTO.setPassword(hashedPassword);
+		
 		accDTO.setStatusAccount(1);
 		accDTO.setRole(1);
 		String path = request.getServletContext().getRealPath("Resources/images_Account");

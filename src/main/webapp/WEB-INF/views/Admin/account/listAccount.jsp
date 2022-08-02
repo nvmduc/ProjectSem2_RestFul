@@ -145,7 +145,7 @@
 												</td>
 												<td><span class="badge badge-success">${a.created_at_Account}</span></td>
 												<td><a
-													href="deletePackage?idPackage=${a.idAccount }"
+													href="deleteAccount?idAccount=${a.idAccount }"
 													class="btn-fab btn-fab-sm btn-danger shadow text-white"
 													onclick="alertdelete()"><i class="icon-trash"></i></a></td>
 												<td><div class="d-none d-lg-block"></div></td>

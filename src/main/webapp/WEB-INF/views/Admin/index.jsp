@@ -3,6 +3,7 @@
 <%@ taglib prefix="css" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="header.jsp" />
 <div class="has-sidebar-left has-sidebar-tabs">
+
 	<!--navbar-->
 	<div class="sticky">
 		<div
@@ -20,7 +21,7 @@
 					<!-- Messages-->
 
 					<!-- Notifications -->
-
+<%-- 					<li><a>${user.email }</a></li> --%>
 					<li><a class="nav-link " data-toggle="collapse"
 						data-target="#navbarToggleExternalContent"
 						aria-controls="navbarToggleExternalContent" aria-expanded="false"
@@ -35,45 +36,11 @@
 							alt=""> <i class="icon-more_vert "></i>
 					</a>
 						<div class="dropdown-menu p-4 dropdown-menu-right">
-							<div class="row box justify-content-between my-4">
-								<div class="col">
-									<a href="#"> <i
-										class="icon-apps purple lighten-2 avatar  r-5"></i>
-										<div class="pt-1">Apps</div>
-									</a>
-								</div>
-								<div class="col">
-									<a href="#"> <i
-										class="icon-beach_access pink lighten-1 avatar  r-5"></i>
-										<div class="pt-1">Profile</div>
-									</a>
-								</div>
-								<div class="col">
-									<a href="#"> <i
-										class="icon-perm_data_setting indigo lighten-2 avatar  r-5"></i>
-										<div class="pt-1">Settings</div>
-									</a>
-								</div>
-							</div>
-							<div class="row box justify-content-between my-4">
-								<div class="col">
-									<a href="#"> <i
-										class="icon-star light-green lighten-1 avatar  r-5"></i>
-										<div class="pt-1">Favourites</div>
-									</a>
-								</div>
-								<div class="col">
-									<a href="#"> <i
-										class="icon-save2 orange accent-1 avatar  r-5"></i>
-										<div class="pt-1">Saved</div>
-									</a>
-								</div>
-								<div class="col">
-									<a href="#"> <i
-										class="icon-perm_data_setting grey darken-3 avatar  r-5"></i>
-										<div class="pt-1">Settings</div>
-									</a>
-								</div>
+							<div class="row box justify-content-between">
+								<img style="width: 30%" alt=""
+									src="${pageContext.request.contextPath}/<css:url value="Resources"/>/images_Account/${user.avatar }">
+								<span>${user.email }</span> 
+								
 							</div>
 							<hr>
 							<div class="row box justify-content-between my-4">
@@ -84,15 +51,15 @@
 									</a>
 								</div>
 								<div class="col">
-									<a href="#"> <i
+									<a href="profileAccount?idAccount=${user.idAccount }"> <i
 										class="icon-beach_access pink lighten-1 avatar  r-5"></i>
 										<div class="pt-1">Profile</div>
 									</a>
 								</div>
 								<div class="col">
-									<a href="#"> <i
-										class="icon-perm_data_setting indigo lighten-2 avatar  r-5"></i>
-										<div class="pt-1">Settings</div>
+									<a href="logoutAdmin"> 
+									<i class="fa fa-sign-out indigo lighten-2 avatar r-5" aria-hidden="true"></i>
+										<div class="pt-1">Logout</div>
 									</a>
 								</div>
 							</div>

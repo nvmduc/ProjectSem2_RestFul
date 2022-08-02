@@ -1,66 +1,72 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="css" uri="http://java.sun.com/jsp/jstl/core"%>
-<jsp:include page="header.jsp"></jsp:include>
+<jsp:include page="layout/header.jsp"></jsp:include>
 <div class="clear"></div>
 <div id="page-content">
 	<section class="flexslider">
 		<ul class="slides">
-			<li><img style="height: 800px"
-				src="<css:url value="Resources"/>/images/bus.jpg" />
-				<div class="slide-info">
-					<div class="slide-con">
-						<b>Bus/Truck Insurance</b>
-						<h3>Bus/Truck Insurance</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Mauris hendrerit fringilla ligula, nec congue leo pharetra in.</p>
-						<a href="#" class="ti-arrow-right"></a>
-					</div>
-				</div></li>
-			<li><img style="height: 800px"
-				src="<css:url value="Resources"/>/images/bien_vang.jpg" />
-				<div class="slide-info">
-					<div class="slide-con">
-						<b>Business Car Insurance</b>
-						<h3>Business Car Insurance</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Mauris hendrerit fringilla ligula, nec congue leo pharetra in.</p>
-						<a href="#" class="ti-arrow-right"></a>
-					</div>
-				</div></li>
-			<li><img style="height: 800px"
-				src="<css:url value="Resources"/>/images/slider-img2.jpg" />
-				<div class="slide-info">
-					<div class="slide-con">
-						<b>Personal Car Insurance</b>
-						<h3>Personal Car Insurance</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Mauris hendrerit fringilla ligula, nec congue leo pharetra in.</p>
-						<a href="#" class="ti-arrow-right"></a>
-					</div>
-				</div></li>
+			<css:forEach items="${listBanners }" var="b">
+				<li><img style="height: 600px; width: 1440px"
+					src="<css:url value="Resources"/>/image_Banner/${b.imgBanner }" />
+					<div class="slide-info">
+						<div class="slide-con">
+							<b>${b.titleBanner }</b>
+							<h3>${b.nameBanner }</h3>
+							<p>${b.description }</p>
+							<a href="#" class="ti-arrow-right"></a>
+						</div>
+					</div></li>
+			</css:forEach>
 		</ul>
 	</section>
 	<div class="container">
 		<div class="row">
 			<section class="col-sm-7 col-md-8 col-lg-8">
 				<div class="intro">
-					<h2>Welcome to Insurance press</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Praesent orci nisi, porta sed diam id, venenatis dignissim urna.
-						Duis sit amet eros a sem viverra mollis nec eu sem. Quisque
-						rutporta sed diam id, venenatis dignissim urna. Duis sit amet eros
-						a sem viver uisque rurum euismod fermentum.</p>
+					<h2>Welcome to Insurance Car</h2>
+					<p>Bảo hiểm ô tô của Liberty là sản phẩm bảo hiểm toàn diện với phạm
+					vi bảo hiểm rộng nhất cho mọi rủi ro trên các hành trình của bạn.
+					Với hệ sinh thái kỹ thuật số toàn cầu của Liberty, giờ đây khách
+					hàng có thể tự giám định xe, nhận báo giá và mua bảo hiểm ô tô online một cách nhanh chóng</p>
 					<ul class="row">
 						<li class="col-sm-4"><i class="fa fa-life-ring"></i>
-							<h3>27x7 Support</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur.</p></li>
+							<h3>Bảo hiểm TNDS BB</h3>
+							<p>✓ Trách nhiệm dân sự bắt buộc với bên thứ ba</p>
+								<p>
+									● Về Người : 150.000.000 đồng/người
+								</p>
+								<p>
+									● Về Tài Sản : 100.000.000 đồng/vụ
+								</p>
+								<p>
+									● Tổng hạn mức trách nhiệm : không giới hạn
+
+								</p>
+						</li>
 						<li class="col-sm-4"><i class="ti-marker-alt"></i>
-							<h3>Easy Claim system</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur.</p></li>
+							<h3>Bảo hiểm Ô tô</h3>
+								<p>✓ Mức khấu trừ: lựa chọn từ 500.000 đồng</p>
+								<p>✓ Bảo hiểm tổn thất tòan bộ</p>
+								<p>✓ Bảo hiểm tổn thất bộ phận</p>
+								<p>✓ Bảo hiểm mất cắp tòan bộ</p>
+								<p>✓ Hỗ trợ cứu hộ cho mọi rủi ro</p>
+								<p>✓ Bảo hiểm thủy kích</p>
+								<p>✓ Garage tùy chọn</p>
+								<p>✓ Bảo hiểm không khấu hao thay thế mới</p>
+							</li>
 						<li class="col-sm-4"><i class="ti-email"></i>
-							<h3>Get Started with us</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur.</p></li>
+							<h3>Bảo hiểm Ô tô và Bảo hiểm TNDS BB</h3>
+								<p>✓ Mức khấu trừ: lựa chọn từ 500.000 đồng</p>
+								<p>✓ Bảo hiểm tổn thất toàn bộ</p>
+								<p>✓ Bảo hiểm tổn thất bộ phận</p>
+								<p>✓ Bảo hiểm mất cắp toàn bộ</p>
+								<p>✓ Hỗ trợ cứu hộ cho mọi rủi ro</p>
+								<p>✓ Bảo hiểm thủy kích</p>
+								<p>✓ Garage tùy chọn</p>
+								<p>✓ Bảo hiểm không khấu hao thay thế mới</p>
+								<p>✓ Trách nhiệm dân sự bắt buộc với bên thứ ba</p>
+						</li>
 					</ul>
 				</div>
 			</section>
@@ -93,155 +99,135 @@
 			</section>
 		</div>
 	</div>
-	<section class="product-tab" id="product">
-		<div class="container">
-			<div class="row">
-				<div id="parentVerticalTab">
-					<h2>Products</h2>
-					<ul class="resp-tabs-list hor_1 col-sm-3 col-md-3 col-lg-3">
-						<li><i class="ti-home"></i> House Insurance</li>
-						<li><i class="fa fa-plane"></i> Travel Insurance</li>
-						<li><i class="ti-heart-broken"></i> Life Insurance</li>
-						<li><i class="ti-car"></i> Car Insurance</li>
-					</ul>
-					<div class="col-sm-5 col-md-5 col-lg-5 resp-tabs-container hor_1">
-						<div>
-							<div class="prod-tab-content">
-								<h4>
-									<span class="prod-cion"><i class="ti-home"></i></span> House
-									Insurance
-								</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Vestibulum nibh urna, euismod ut ornare non, volutpat vel
-									tortor. Integer</p>
-								<p>et placerat suscipit. Sed sodales scelerisque commodo.
-									Nam porta cursus lectus.</p>
-								<p class="tel">
-									<i class="fa fa-phone"></i> +123 456 7890 <span>Toll
-										Free</span>
-								</p>
-								<p>
-									<a class="btn-default" href="product-houseinsurance.html">BUY
-										NOW</a>
-								</p>
-							</div>
-							<img src="<css:url value="Resources"/>/images/product-img.jpg"
-								alt="" class="img-responsive" />
-						</div>
-						<div>
-							<div class="prod-tab-content">
-								<h4>
-									<span class="prod-cion"><i class="fa fa-plane"></i></span>
-									Travel Insurance
-								</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Vestibulum nibh urna, euismod ut ornare non, volutpat vel
-									tortor. Integer</p>
-								<p>et placerat suscipit. Sed sodales scelerisque commodo.
-									Nam porta cursus lectus.</p>
-								<p class="tel">
-									<i class="fa fa-phone"></i> +123 456 7890 <span>Toll
-										Free</span>
-								</p>
-								<p>
-									<a class="btn-default" href="#">Buy Now</a>
-								</p>
-							</div>
-							<img src="<css:url value="Resources"/>/images/1.jpg" alt=""
-								class="img-responsive" />
-						</div>
-						<div>
-							<div class="prod-tab-content">
-								<h4>
-									<span class="prod-cion"><i class="ti-heart-broken"></i></span>
-									Life Insurance
-								</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Vestibulum nibh urna, euismod ut ornare non, volutpat vel
-									tortor. Integer</p>
-								<p>et placerat suscipit. Sed sodales scelerisque commodo.
-									Nam porta cursus lectus.</p>
-								<p class="tel">
-									<i class="fa fa-phone"></i> +123 456 7890 <span>Toll
-										Free</span>
-								</p>
-								<p>
-									<a class="btn-default" href="#">Buy Now</a>
-								</p>
-							</div>
-							<img src="<css:url value="Resources"/>/images/3.jpg" alt=""
-								class="img-responsive" />
-						</div>
-						<div>
-							<div class="prod-tab-content">
-								<h4>
-									<span class="prod-cion"><i class="ti-car"></i></span> Car
-									Insurance
-								</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Vestibulum nibh urna, euismod ut ornare non, volutpat vel
-									tortor. Integer</p>
-								<p>et placerat suscipit. Sed sodales scelerisque commodo.
-									Nam porta cursus lectus.</p>
-								<p class="tel">
-									<i class="fa fa-phone"></i> +123 456 7890 <span>Toll
-										Free</span>
-								</p>
-								<p>
-									<a class="btn-default" href="#">Buy Now</a>
-								</p>
-							</div>
-							<img src="<css:url value="Resources"/>/images/2.jpg" alt=""
-								class="img-responsive" />
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	<!-- 	<section class="product-tab" id="product"> -->
+	<!-- 		<div class="container"> -->
+	<!-- 			<div class="row"> -->
+	<!-- 				<div id="parentVerticalTab"> -->
+	<!-- 					<h2>Products</h2> -->
+	<!-- 					<ul class="resp-tabs-list hor_1 col-sm-3 col-md-3 col-lg-3"> -->
+	<!-- 						<li><i class="ti-home"></i> House Insurance</li> -->
+	<!-- 						<li><i class="fa fa-plane"></i> Travel Insurance</li> -->
+	<!-- 						<li><i class="ti-heart-broken"></i> Life Insurance</li> -->
+	<!-- 						<li><i class="ti-car"></i> Car Insurance</li> -->
+	<!-- 					</ul> -->
+	<!-- 					<div class="col-sm-5 col-md-5 col-lg-5 resp-tabs-container hor_1"> -->
+	<!-- 						<div> -->
+	<!-- 							<div class="prod-tab-content"> -->
+	<!-- 								<h4> -->
+	<!-- 									<span class="prod-cion"><i class="ti-home"></i></span> House -->
+	<!-- 									Insurance -->
+	<!-- 								</h4> -->
+	<!-- 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. -->
+	<!-- 									Vestibulum nibh urna, euismod ut ornare non, volutpat vel -->
+	<!-- 									tortor. Integer</p> -->
+	<!-- 								<p>et placerat suscipit. Sed sodales scelerisque commodo. -->
+	<!-- 									Nam porta cursus lectus.</p> -->
+	<!-- 								<p class="tel"> -->
+	<!-- 									<i class="fa fa-phone"></i> +123 456 7890 <span>Toll -->
+	<!-- 										Free</span> -->
+	<!-- 								</p> -->
+	<!-- 								<p> -->
+	<!-- 									<a class="btn-default" href="product-houseinsurance.html">BUY -->
+	<!-- 										NOW</a> -->
+	<!-- 								</p> -->
+	<!-- 							</div> -->
+	<%-- 							<img src="<css:url value="Resources"/>/images/product-img.jpg" --%>
+	<!-- 								alt="" class="img-responsive" /> -->
+	<!-- 						</div> -->
+	<!-- 						<div> -->
+	<!-- 							<div class="prod-tab-content"> -->
+	<!-- 								<h4> -->
+	<!-- 									<span class="prod-cion"><i class="fa fa-plane"></i></span> -->
+	<!-- 									Travel Insurance -->
+	<!-- 								</h4> -->
+	<!-- 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. -->
+	<!-- 									Vestibulum nibh urna, euismod ut ornare non, volutpat vel -->
+	<!-- 									tortor. Integer</p> -->
+	<!-- 								<p>et placerat suscipit. Sed sodales scelerisque commodo. -->
+	<!-- 									Nam porta cursus lectus.</p> -->
+	<!-- 								<p class="tel"> -->
+	<!-- 									<i class="fa fa-phone"></i> +123 456 7890 <span>Toll -->
+	<!-- 										Free</span> -->
+	<!-- 								</p> -->
+	<!-- 								<p> -->
+	<!-- 									<a class="btn-default" href="#">Buy Now</a> -->
+	<!-- 								</p> -->
+	<!-- 							</div> -->
+	<%-- 							<img src="<css:url value="Resources"/>/images/1.jpg" alt="" --%>
+	<!-- 								class="img-responsive" /> -->
+	<!-- 						</div> -->
+	<!-- 						<div> -->
+	<!-- 							<div class="prod-tab-content"> -->
+	<!-- 								<h4> -->
+	<!-- 									<span class="prod-cion"><i class="ti-heart-broken"></i></span> -->
+	<!-- 									Life Insurance -->
+	<!-- 								</h4> -->
+	<!-- 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. -->
+	<!-- 									Vestibulum nibh urna, euismod ut ornare non, volutpat vel -->
+	<!-- 									tortor. Integer</p> -->
+	<!-- 								<p>et placerat suscipit. Sed sodales scelerisque commodo. -->
+	<!-- 									Nam porta cursus lectus.</p> -->
+	<!-- 								<p class="tel"> -->
+	<!-- 									<i class="fa fa-phone"></i> +123 456 7890 <span>Toll -->
+	<!-- 										Free</span> -->
+	<!-- 								</p> -->
+	<!-- 								<p> -->
+	<!-- 									<a class="btn-default" href="#">Buy Now</a> -->
+	<!-- 								</p> -->
+	<!-- 							</div> -->
+	<%-- 							<img src="<css:url value="Resources"/>/images/3.jpg" alt="" --%>
+	<!-- 								class="img-responsive" /> -->
+	<!-- 						</div> -->
+	<!-- 						<div> -->
+	<!-- 							<div class="prod-tab-content"> -->
+	<!-- 								<h4> -->
+	<!-- 									<span class="prod-cion"><i class="ti-car"></i></span> Car -->
+	<!-- 									Insurance -->
+	<!-- 								</h4> -->
+	<!-- 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. -->
+	<!-- 									Vestibulum nibh urna, euismod ut ornare non, volutpat vel -->
+	<!-- 									tortor. Integer</p> -->
+	<!-- 								<p>et placerat suscipit. Sed sodales scelerisque commodo. -->
+	<!-- 									Nam porta cursus lectus.</p> -->
+	<!-- 								<p class="tel"> -->
+	<!-- 									<i class="fa fa-phone"></i> +123 456 7890 <span>Toll -->
+	<!-- 										Free</span> -->
+	<!-- 								</p> -->
+	<!-- 								<p> -->
+	<!-- 									<a class="btn-default" href="#">Buy Now</a> -->
+	<!-- 								</p> -->
+	<!-- 							</div> -->
+	<%-- 							<img src="<css:url value="Resources"/>/images/2.jpg" alt="" --%>
+	<!-- 								class="img-responsive" /> -->
+	<!-- 						</div> -->
+	<!-- 					</div> -->
+	<!-- 				</div> -->
+	<!-- 			</div> -->
+	<!-- 		</div> -->
+	<!-- 	</section> -->
 	<section class="services">
 		<h2 class="text-center">Our Best Services</h2>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-3 services-dtl">
 					<span class="fa fa-life-bouy"></span>
-					<h3>24x7 Support</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur</p>
+					<h3>Bảo hiểm toàn diện cho mọi rủi ro</h3>
+					<p>Bảo hiểm cho mọi rủi ro đối với xe ô tô của bạn bao gồm cả tổn thất hay mất cắp toàn bộ và từng bộ phận, tai nạn người ngồi trên xe, trách nhiệm dân sự đối với bên thứ ba.</p>
 				</div>
 				<div class="col-sm-3 services-dtl">
 					<span class="ti-pencil"></span>
-					<h3>Easy Claim System</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur</p>
+					<h3>Tặng kèm bảo hiểm thuỳ kích</h3>
+					<p>Bảo hiểm cho những tổn thất về vật chất xe gây ra bởi hiện tượng thuỷ kích để khách hàng an tâm khi lái xe mùa mưa bão</p>
 				</div>
 				<div class="col-sm-3 services-dtl">
 					<span class="ti-email"></span>
-					<h3>Get Started With us</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur</p>
+					<h3>Hỗ trợ cứu hộ 24/7 lên đến 4 triệu VNĐ</h3>
+					<p>Hỗ trợ cứu hộ miễn phí 24/7, đặc biệt là chi phí cẩu kéo, lên đến 4 triệu VNĐ/ năm cho các trường hợp tai nạn, nổ lốp, hết xăng, v.v</p>
 				</div>
 				<div class="col-sm-3 services-dtl">
 					<span class="fa fa-money"></span>
-					<h3>Easy Installments</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur</p>
-				</div>
-				<div class="col-sm-3 services-dtl">
-					<span class="ti-wallet"></span>
-					<h3>Lorem Ipsum</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur</p>
-				</div>
-				<div class="col-sm-3 services-dtl">
-					<span class="fa fa-laptop"></span>
-					<h3>Online Account</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur</p>
-				</div>
-				<div class="col-sm-3 services-dtl">
-					<span class="ti-lock"></span>
-					<h3>Strongly Secure</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur</p>
-				</div>
-				<div class="col-sm-3 services-dtl">
-					<span class="ti-book"></span>
-					<h3>Understandable Terms</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur</p>
+					<h3>Bồi thường lên đến 2 lần/ năm với bảo hiểm mất cắp bộ phận</h3>
+					<p>Bồi thường lến đến 2 vụ/năm cho cùng 1 bộ phận và không giới hạn số bộ phận bị mất cắp/vụ</p>
 				</div>
 			</div>
 		</div>
@@ -275,8 +261,7 @@
 						<div class="testimonials-tab-content">
 							<div class="clearfix testimonial-con" id="testimonial-tab1">
 								<h3>
-									John<br />
-									<span>Developer</span>
+									John<br /> <span>Developer</span>
 								</h3>
 								<i class="fa fa-quote-left left-quote"></i>
 								<p class="col-sm-offset-1 col-sm-10">Lorem ipsum dolor sit
@@ -287,8 +272,7 @@
 							</div>
 							<div class="clearfix testimonial-con" id="testimonial-tab2">
 								<h3>
-									Roger<br />
-									<span>Baseball Player</span>
+									Roger<br /> <span>Baseball Player</span>
 								</h3>
 								<i class="fa fa-quote-left left-quote"></i>
 								<p class="col-sm-offset-1 col-sm-10">Cras vitae justo eu
@@ -299,8 +283,7 @@
 							</div>
 							<div class="clearfix testimonial-con" id="testimonial-tab3">
 								<h3>
-									Victoria<br />
-									<span>CEO</span>
+									Victoria<br /> <span>CEO</span>
 								</h3>
 								<i class="fa fa-quote-left left-quote"></i>
 								<p class="col-sm-offset-1 col-sm-10">Vivamus faucibus magna
@@ -312,8 +295,7 @@
 							</div>
 							<div class="clearfix testimonial-con" id="testimonial-tab4">
 								<h3>
-									Liang<br />
-									<span>Photographer</span>
+									Liang<br /> <span>Photographer</span>
 								</h3>
 								<i class="fa fa-quote-left left-quote"></i>
 								<p class="col-sm-offset-1 col-sm-10">Pellentesque feugiat
@@ -324,8 +306,7 @@
 							</div>
 							<div class="clearfix testimonial-con" id="testimonial-tab5">
 								<h3>
-									Adam<br />
-									<span>Student</span>
+									Adam<br /> <span>Student</span>
 								</h3>
 								<i class="fa fa-quote-left left-quote"></i>
 								<p class="col-sm-offset-1 col-sm-10">Vivamus faucibus magna
@@ -520,4 +501,4 @@
 	</section>
 </div>
 <div class="clear"></div>
-<jsp:include page="footer.jsp"></jsp:include>
+<jsp:include page="layout/footer.jsp"></jsp:include>

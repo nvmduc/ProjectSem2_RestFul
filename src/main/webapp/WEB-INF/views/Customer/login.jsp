@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="css" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<jsp:include page="header.jsp"></jsp:include>
+<jsp:include page="layout/header.jsp"></jsp:include>
 <div class="clear"></div>
 
 <div id="page-content">
@@ -20,6 +20,7 @@
 								<input style="padding-left: 10px" type="password"
 									name="password" placeholder="Password" />
 							</div>
+							<a href="initregister">You don't have an account?</a>
 							<div class="text-center">
 								<input type="submit" class="btn-default" value="Submit" />
 							</div>
@@ -32,4 +33,4 @@
 
 </div>
 <div class="clear"></div>
-<jsp:include page="footer.jsp"></jsp:include>
+<jsp:include page="layout/footer.jsp"></jsp:include>

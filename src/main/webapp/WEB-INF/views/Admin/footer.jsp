@@ -158,6 +158,7 @@
 	
 	<!--/#app -->
 	<script type="text/javascript" src="${pageContext.request.contextPath }/<css:url value="Resources"/>/admin/assets/js/app.js"></script>
+	
 </body>
 
 </html>

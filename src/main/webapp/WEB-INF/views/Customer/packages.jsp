@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="css" uri="http://java.sun.com/jsp/jstl/core"%>
-<jsp:include page="header.jsp"></jsp:include>
+<jsp:include page="layout/header.jsp"></jsp:include>
 <div class="clear"></div>
 <div id="page-content">
 	<div class="container">
 		<div class="row">
-			<div class="center1" style="padding: 30px 0px 20px 0px">
+			<div class="center1" style="padding: 50px 0px 20px 0px">
 				<h2 style="padding-bottom: 20px">
 					<strong>Are you looking for car insurance?</strong>
 				</h2>
@@ -25,8 +25,16 @@
 								style="width: 80% !important; height: 100px;">
 								<h4 class="card-title">${p.namePackage }</h4>
 							</div>
+							<div>
+							</div>
 							<div style="padding-left: 60px">
-								<a class="btn-default" href="initInsertCar">BUY NOW</a>
+								<css:if test="${empty user }">
+									<a class="btn-default" href="login">SIGN IN</a>
+								</css:if>
+								<css:if test="${!empty user }">
+									<a class="btn-default" href="initInsertCar">BUY NOW</a>
+								</css:if>
+
 							</div>
 						</div>
 					</div>
@@ -37,4 +45,4 @@
 </div>
 </div>
 <div class="clear"></div>
-<jsp:include page="footer.jsp"></jsp:include>
+<jsp:include page="layout/footer.jsp"></jsp:include>

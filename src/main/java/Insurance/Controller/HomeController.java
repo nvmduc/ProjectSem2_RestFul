@@ -32,6 +32,7 @@ import com.sun.jersey.api.client.GenericType;
 import com.sun.jersey.api.client.WebResource;
 
 import Insurance.Entities.AccountDTO;
+import Insurance.Entities.BannerDTO;
 import Insurance.Entities.InsurancePackageDTO;
 
 @Controller
@@ -44,8 +45,25 @@ public class HomeController {
 
 	@RequestMapping(value = { "/", "/home" })
 	public String home(Model model) {
+		Client client = Client.create();
+		Gson son = new Gson();
+		WebResource webResource = client
+				.resource("http://localhost:8080/ProjectSem2_Insurance/rest/package-service/getAllPackage");
+		String data = webResource.get(String.class);
+		GenericType<List<InsurancePackageDTO>> listType = new GenericType<List<InsurancePackageDTO>>() {
+		};
+		List<InsurancePackageDTO> listPackages = son.fromJson(data, listType.getType());
+		WebResource webResource2 = client
+				.resource("http://localhost:8080/ProjectSem2_Insurance/rest/banner-service/getAllBanner");
+		String data2 = webResource2.get(String.class);
+		GenericType<List<BannerDTO>> listType2 = new GenericType<List<BannerDTO>>() {
+		};
+		List<BannerDTO> listBanners = son.fromJson(data2, listType2.getType());
+		model.addAttribute("listBanners", listBanners);
+		model.addAttribute("listPackages", listPackages);
 		return "customer/index";
 	}
+	
 	
 	@RequestMapping("/packages")
 	public String packages(Model model) {
@@ -60,6 +78,4 @@ public class HomeController {
 		model.addAttribute("listPackages", listPackages);
 		return "customer/packages";
 	}
-	
-	
 }

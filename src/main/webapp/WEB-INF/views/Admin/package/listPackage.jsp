@@ -127,8 +127,8 @@
 												<td>
 													<h6>${p.namePackage }</h6>
 												</td>
-												<td style="width: 20%">
-												<img alt="" src="${pageContext.request.contextPath}/<css:url
+												<td style="width: 20%"><img alt=""
+													src="${pageContext.request.contextPath}/<css:url
 														value="Resources" />/image_Package/${p.imagePackage }">
 												</td>
 												<td>
@@ -137,12 +137,20 @@
 													</div>
 												</td>
 												<td><span class="badge badge-success">${p.created_at_Package}</span></td>
-												<td><a href="initUpdatePackage?idPackage=${p.idPackage }"
+												<td><a
+													href="initUpdatePackage?idPackage=${p.idPackage }"
 													class="btn-fab btn-fab-sm btn-primary shadow text-white"><i
 														class="icon-pencil"></i></a> <a
 													href="deletePackage?idPackage=${p.idPackage }"
 													class="btn-fab btn-fab-sm btn-danger shadow text-white"
-													onclick="alertdelete()"><i class="icon-trash"></i></a></td>
+													onclick="alertdelete()"><i class="icon-trash"></i></a> 
+														<a href="detailPackageById?idPackage=${p.idPackage }"
+													class="btn-fab btn-fab-sm btn-primary shadow text-white"><i
+														class="fa fa-info" aria-hidden="true"></i></a>
+														<a href="initInsertDetailPackage?idPackage=${p.idPackage }"
+													class="btn-fab btn-fab-sm btn-primary shadow text-white"><i
+														class="fa fa-plus" aria-hidden="true"></i></a>
+													</td>
 												<td><div class="d-none d-lg-block"></div></td>
 											</tr>
 										</css:forEach>

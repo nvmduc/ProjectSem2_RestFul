@@ -14,14 +14,19 @@
 	type="image/x-icon">
 <title>Paper</title>
 <!-- CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/<css:url value="Resources"/>/admin/assets/css/app.css">
+
 <style type="text/css">
-.error {
+.error {	
 	color: red;
 }
 </style>
 </head>
 <body class="light sidebar-mini sidebar-collapse">
+<css:if test="${empty user }">
+	<jsp:forward page="/admin/loginAdmin"></jsp:forward>
+</css:if>
 	<div id="app">
 		<aside class="main-sidebar fixed offcanvas b-r sidebar-tabs"
 			data-toggle='offcanvas'>
@@ -63,7 +68,7 @@
 								</div>
 							</div>
 							<ul class="sidebar-menu">
-								<li class="treeview"><a href="home"> <i
+								<li class="treeview"><a href="dashboard"> <i
 										class="icon icon-sailing-boat-water s-24"></i> <span>Dashboard</span>
 								</a></li>
 								<li class="treeview"><a href="#"><i
@@ -81,7 +86,7 @@
 									<ul class="treeview-menu">
 										<li><a href="listBanners"><i
 												class="icon icon-circle-o"></i>List Banners</a></li>
-										<li><a href="insertRole"><i
+										<li><a href="initInsertBanner"><i
 												class="icon icon-add"></i>Add Banner</a></li>
 									</ul></li>
 								<li class="treeview"><a href="#"><i
@@ -101,33 +106,6 @@
 												Packages</a></li>
 										<li><a href="initInsertPackage"><i class="icon icon-add"></i>Add
 												Package</a></li>
-									</ul></li>
-								<li class="treeview"><a href="#"><i
-										class="icon icon-group s-24"></i>Role<i
-										class=" icon-angle-left  pull-right"></i></a>
-									<ul class="treeview-menu">
-										<li><a href="showdegree"><i
-												class="icon icon-circle-o"></i>All Roles</a></li>
-										<li><a href="initinsertdegree"><i
-												class="icon icon-add"></i>Add Role</a></li>
-									</ul></li>
-								<li class="treeview"><a href="#"><i
-										class="icon icon-attach_money s-24"></i>Salary<i
-										class=" icon-angle-left  pull-right"></i></a>
-									<ul class="treeview-menu">
-										<li><a href="showdegree"><i
-												class="icon icon-circle-o"></i>All Salarys</a></li>
-										<li><a href="initinsertdegree"><i
-												class="icon icon-add"></i>Add Salary</a></li>
-									</ul></li>
-								<li class="treeview"><a href="#"><i
-										class="icon icon-perm_contact_calendar s-24"></i>Timekeeping<i
-										class=" icon-angle-left  pull-right"></i></a>
-									<ul class="treeview-menu">
-										<li><a href="showdegree"><i
-												class="icon icon-circle-o"></i>All Timekeepings</a></li>
-										<li><a href="initinsertdegree"><i
-												class="icon icon-add"></i>Add Timekeeping</a></li>
 									</ul></li>
 							</ul>
 						</div>
